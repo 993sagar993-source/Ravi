@@ -12,8 +12,41 @@
       <div id="auth-container">
         <!-- Login/Setup form will be injected here by login.js -->
       </div>
+      <div
+        id="reset-container"
+        style="
+          margin-top: 2rem;
+          border-top: 1px solid var(--border);
+          padding-top: 1.5rem;
+        "
+      >
+        <p class="muted small" style="text-align: center">
+          Forgot your password? <strong>This will delete all data.</strong>
+        </p>
+        <button
+          id="reset-password-btn"
+          class="secondary danger"
+          style="width: 100%; margin-top: 0.5rem"
+        >
+          Reset Password & Delete Data
+        </button>
+      </div>
     </div>
   </div>
   <script src="login.js"></script>
+  <script>
+    document.getElementById('reset-password-btn').addEventListener('click', () => {
+      const confirmed = confirm('FORGOT PASSWORD?\n\nThis will permanently delete all your clients and ledger data and allow you to set a new password.\n\nThis action CANNOT be undone.\n\nAre you absolutely sure you want to proceed?');
+      if (confirmed) {
+        // IMPORTANT: Make sure this password key matches the one in login.js
+        const PASSWORD_KEY = 'aluminium-blank-app:password';
+        const STORAGE_KEY = 'aluminium-blank-app:v1';
+        localStorage.removeItem(PASSWORD_KEY);
+        localStorage.removeItem(STORAGE_KEY);
+        alert('All data has been deleted. The page will now reload for you to set up a new password.');
+        window.location.reload();
+      }
+    });
+  </script>
 </body>
 </html>
