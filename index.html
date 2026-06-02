@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aluminium Blank Business</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <div id="main-app-container">
+      <header class="topbar">
+        <div class="brand">Aluminium Blank Business</div>
+        <div class="actions">
+          <button id="btnExportCsv" class="secondary">Export CSV</button>
+          <label class="secondary">
+            Import CSV
+            <input id="fileImportCsv" type="file" accept="text/csv,application/vnd.ms-excel" style="display:none;" />
+          </label>
+          <button id="btnLogout" class="secondary danger">Log Out</button>
+
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <nav>
+            <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+            <button class="nav-btn" data-view="clients">Clients</button>
+            <button class="nav-btn" data-view="newEntry">New Entry</button>
+            <button class="nav-btn" data-view="ledger">Accounts / Ledger</button>
+            <button class="nav-btn" data-view="clientDetails">Client-wise Details</button>
+            <button class="nav-btn" data-view="settings">Settings</button>
+          </nav>
+        </aside>
+
+        <section class="content">
+          <div id="viewDashboard" class="view"></div>
+          <div id="viewClients" class="view" style="display:none;"></div>
+          <div id="viewNewEntry" class="view" style="display:none;"></div>
+          <div id="viewLedger" class="view" style="display:none;"></div>
+          <div id="viewClientDetails" class="view" style="display:none;"></div>
+          <div id="viewSettings" class="view" style="display:none;"></div>
+
+        </section>
+
+      </main>
+
+      <footer class="footer">
+        <span class="muted">Tip: Click a client to edit special prices.</span>
+        <span class="muted">All data stored locally in your browser.</span>
+      </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
