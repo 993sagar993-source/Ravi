@@ -1,0 +1,13 @@
+# macOS system files
+.DS_Store
+
+# IDE and editor directories
+.vscode/
+.idea/
+
+# Dependency directories (for future use)
+node_modules/
+
+# Build output directories
+dist/
+build/
